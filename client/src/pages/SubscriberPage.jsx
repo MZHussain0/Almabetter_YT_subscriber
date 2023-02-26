@@ -6,15 +6,12 @@ const SubscriberPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios.get("/subscribers").then(({ data }) => {
-      setData(JSON.stringify(data));
+      setData(JSON.stringify(data, null, 2));
     });
   }, []);
 
   return (
-    <div className=" max-w-md rounded-md overflow-hidden">
-      <p className="text-xs">Details of all subscribers</p>
-      <CodeBlock data={data} />
-    </div>
+    <CodeBlock data={data} text={"Details of all subscribers"} />
   );
 };
 

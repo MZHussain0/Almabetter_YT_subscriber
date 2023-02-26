@@ -6,14 +6,19 @@ const SubNamesPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios.get("/subscribers/names").then(({ data }) => {
-      setData(JSON.stringify(data));
+      setData(JSON.stringify(data, null, 2));
     });
   }, []);
   return (
-    <div className=" max-w-md rounded-md overflow-hidden">
-      <p className="text-xs">names and subscribedChannel of subscribers</p>
-      <CodeBlock data={data} />
-    </div>
+     <>
+        <CodeBlock
+           data={data}
+           text={"names and subscribedChannel of subscribers"}
+        />
+        <sub className="text-[0.5rem]">
+           Note: this route has been set to id "/63f78075ad07a7f651fdd9b8" except for "/names"
+        </sub>
+     </>
   );
 };
 

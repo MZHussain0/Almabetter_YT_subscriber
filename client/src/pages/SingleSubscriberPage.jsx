@@ -6,14 +6,15 @@ const SingleSubscriberPage = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
     axios.get("/subscribers/63f78075ad07a7f651fdd9b8").then(({ data }) => {
-      setData(JSON.stringify(data));
+      setData(JSON.stringify(data, null, 2));
     });
   }, []);
   return (
-    <div className=" max-w-md rounded-md overflow-hidden">
-      <p className="text-xs">Details of ID: 63f78075ad07a7f651fdd9b8</p>
-      <CodeBlock data={data} />
-    </div>
+     
+        <CodeBlock
+           data={data}
+           text={"Details of ID: 63f78075ad07a7f651fdd9b8"}
+        />
   );
 };
 
