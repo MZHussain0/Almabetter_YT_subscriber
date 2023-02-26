@@ -6,7 +6,7 @@ import SubNamesPage from "./pages/SubNamesPage";
 import SingleSubscriberPage from "./pages/SingleSubscriberPage";
 import PageNotFound from "./pages/PageNotFound";
 
-axios.defaults.baseURL = "http://localhost:3001";
+axios.defaults.baseURL = "https://almabetter-yt-subscribers.onrender.com/";
 axios.defaults.withCredentials = true;
 function App() {
   return (

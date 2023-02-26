@@ -16,10 +16,10 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(
-  cors({
-    credentials: true,
-    origin: "http://localhost:5173",
-  })
+   cors({
+      credentials: true,
+      origin: "https://almabetter-yt-subscribers.netlify.app",
+   })
 );
 //
 // ROUTES //
