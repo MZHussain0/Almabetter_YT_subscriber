@@ -42,6 +42,8 @@ app.use(errorHandler);
 // MONGOOSE SETUP //
 const PORT = process.env.PORT || 9000;
 
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
   console.log("listening on PORT: " + PORT);
 });
+
+module.exports = server;

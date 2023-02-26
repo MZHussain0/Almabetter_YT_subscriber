@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const Subscriber = require("../models/Subscriber");
-const data = require("../data/data");
 
 const connectDb = async () => {
   try {
