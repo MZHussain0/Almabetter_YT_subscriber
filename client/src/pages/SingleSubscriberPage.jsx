@@ -21,7 +21,7 @@ const SingleSubscriberPage = () => {
 
     // Fetch the subscriber data from the API
     axios
-      .get(`/subscribers/${id}`)
+      .get(`${import.meta.env.VITE_APP_API_BASE_URL}/subscribers/${id}`)
       .then(({ data }) => {
         setData(data);
       })
