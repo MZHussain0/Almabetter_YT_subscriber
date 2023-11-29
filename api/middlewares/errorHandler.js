@@ -1,3 +1,4 @@
+// errorHandler.js Handles errors and sends appropriate responses based on the error status code.
 const errorHandler = (err, req, res, next) => {
   const statusCode = err.statusCode || 500;
 

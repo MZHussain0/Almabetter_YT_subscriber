@@ -1,5 +1,6 @@
 import React from "react";
 
+// Renders a page for when a requested resource does not exist.
 const PageNotFound = () => {
   return (
     <>

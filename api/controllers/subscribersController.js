@@ -13,8 +13,8 @@ const getSubscribers = asyncHandler(async (req, res) => {
 //@route GET /subscribers/names
 //@access public
 const getSubsNames = asyncHandler(async (req, res) => {
-  const subscribers = await Subscriber.find().select(
-    "-_id -subscribedDate -__v"
+  const subscribers = await Subscriber.find({}).select(
+    "name subscribedChannel"
   );
   res.json(subscribers);
 });
@@ -23,10 +23,15 @@ const getSubsNames = asyncHandler(async (req, res) => {
 //@route GET /subscribers/:id
 //@access public
 const getSubscriber = asyncHandler(async (req, res) => {
+  if (!req.params.id) {
+    res.status(400);
+    throw new Error("Please provide subscriber id");
+  }
+
   const subscriber = await Subscriber.findById(req.params.id).select("-__v");
   if (!subscriber) {
     res.status(404);
-    throw new Error("Subscriber not found");
+    throw new Error(`Subscriber not found with ID: ${req.params.id}`);
   }
   res.status(200).json(subscriber);
 });

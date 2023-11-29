@@ -1,5 +1,12 @@
 const mongoose = require("mongoose");
+const Subscriber = require("../models/Subscriber");
+const data = require("../data/data");
 
+/**
+ * Connects to the database using the MONGO_URI environment variable.
+ * Prints the connection details if successful.
+ * Exits the process if an error occurs.
+ */
 const connectDb = async () => {
   try {
     const connect = await mongoose.connect(process.env.MONGO_URI, {

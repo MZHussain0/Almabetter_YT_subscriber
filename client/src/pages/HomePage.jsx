@@ -9,6 +9,7 @@ const HomePage = () => {
         Youtube Subscriber API{" "}
       </div>
 
+      {/* Link to GET /subscriber */}
       <div className="mt-4">
         <Link
           to={"/subscribers"}
@@ -20,6 +21,7 @@ const HomePage = () => {
         </p>
       </div>
 
+      {/* Link to GET /subscriber/names */}
       <div className="mt-4">
         <Link
           to={"/subscribers/names"}
@@ -31,14 +33,15 @@ const HomePage = () => {
         </p>
       </div>
 
+      {/* Link to GET /subscriber/:id */}
       <div className="mt-4">
         <Link
-          to={"/subscribers/63f78075ad07a7f651fdd9b8"}
+          to={"/subscribers/6566f5cfd7b0f42ce80bf072"}
           className="block text-sm bg-red-700 hover:bg-red-800 duration-300 px-4 py-2 rounded-md">
           GET /subscriber/:id
         </Link>
         <p className="text-[0.5rem] opacity-50 mt-1 text-blue-500">
-          fetches the details based on ID(defaultID: 63f78075ad07a7f651fdd9b8)
+          fetches the details based on ID
         </p>
       </div>
     </div>

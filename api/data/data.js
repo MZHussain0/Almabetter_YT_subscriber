@@ -1,3 +1,4 @@
+// samplearray of objects representing subscriber data
 const data = [
   {
     name: "Jeread Krus",

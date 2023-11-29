@@ -1,20 +1,59 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { isValidObjectId } from "../../utils/utils";
 import CodeBlock from "../components/CodeBlock";
 
 const SingleSubscriberPage = () => {
-  const [data, setData] = useState([]);
+  const { id } = useParams();
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+
+  // Fetch the subscriber data when the component mounts
   useEffect(() => {
-    axios.get("/subscribers/63f78075ad07a7f651fdd9b8").then(({ data }) => {
-      setData(JSON.stringify(data, null, 2));
-    });
+    // Check if the ID is valid
+    if (!isValidObjectId(id)) {
+      setError(`No subscribeer found with ID: ${id}`);
+      setLoading(false);
+      return;
+    }
+
+    // Fetch the subscriber data from the API
+    axios
+      .get(`/subscribers/${id}`)
+      .then(({ data }) => {
+        setData(data);
+      })
+      .catch((error) => {
+        const errorMessage =
+          error.response?.data?.message || "An unexpected error occurred";
+        setError(errorMessage);
+        setData(null);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   }, []);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  // Render error message or subscriber details
   return (
-     
-        <CodeBlock
-           data={data}
-           text={"Details of ID: 63f78075ad07a7f651fdd9b8"}
-        />
+    <div>
+      {error ? (
+        <div>{error}</div>
+      ) : (
+        data && (
+          <CodeBlock
+            data={JSON.stringify(data, null, 2)}
+            text={`Details of ID: ${id}`}
+          />
+        )
+      )}
+    </div>
   );
 };
 

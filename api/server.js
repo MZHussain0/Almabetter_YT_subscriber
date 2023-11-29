@@ -11,17 +11,11 @@ const connectDb = require("./config/dbConnection");
 connectDb();
 
 // CONFIGURATION //
-const app = express();
-app.use(express.json());
-app.use(bodyParser.json());
+const app = express(); // Create an Express app
+app.use(cors({ origin: "*" })); // Enable CORS
+app.use(bodyParser.json()); // Parse JSON bodies
 app.use(bodyParser.urlencoded({ extended: false }));
-app.use(
-   cors({
-      credentials: true,
-      origin: "https://almabetter-yt-subscribers.netlify.app",
-   })
-);
-//
+
 // ROUTES //
 app.use("/subscribers", subscribersRoutes);
 
@@ -43,7 +37,7 @@ app.use(errorHandler);
 const PORT = process.env.PORT || 9000;
 
 const server = app.listen(PORT, () => {
-  console.log("listening on PORT: " + PORT);
+  console.log("listening on PORT: " + PORT); // Start the server and log the listening port
 });
 
-module.exports = server;
+module.exports = server; // Export the server for testing
