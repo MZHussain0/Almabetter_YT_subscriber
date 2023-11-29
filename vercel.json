@@ -2,13 +2,20 @@
   "routes": [
     {
       "src": "/subscribers/(.*)",
-      "dest": "/subscribers/$1",
-      "continue": true
+      "dest": "/client/src/pages/SubscriberPage.jsx"
+    },
+    {
+      "src": "/subscribers/names",
+      "dest": "/client/src/pages/SubNamesPage.jsx"
+    },
+    {
+      "src": "/subscribers/:id",
+      "dest": "/client/src/pages/SingleSubscriberPage.jsx"
     },
     {
       "src": "/(.*)",
       "headers": { "cache-control": "s-maxage=1,stale-while-revalidate" },
-      "dest": "/index.html"
+      "dest": "/client/src/pages/HomePage.jsx"
     }
   ]
 }
