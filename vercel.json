@@ -1,21 +1,17 @@
 ﻿{
-  "routes": [
+  "rewrites": [
     {
-      "src": "/subscribers/(.*)",
-      "dest": "/client/src/pages/SubscriberPage.jsx"
+      "source": "/subscribers/(.*)",
+      "destination": "/client/src/pages/SubscriberPage.jsx"
     },
     {
-      "src": "/subscribers/names",
-      "dest": "/client/src/pages/SubNamesPage.jsx"
+      "source": "/subscribers/names",
+      "destination": "/client/src/pages/SubNamesPage.jsx"
     },
     {
-      "src": "/subscribers/:id",
-      "dest": "/client/src/pages/SingleSubscriberPage.jsx"
+      "source": "/subscribers/:id",
+      "destination": "/client/src/pages/SingleSubscriberPage.jsx"
     },
-    {
-      "src": "/(.*)",
-      "headers": { "cache-control": "s-maxage=1,stale-while-revalidate" },
-      "dest": "/client/src/pages/HomePage.jsx"
-    }
+    { "source": "/(.*)", "destination": "/client/src/pages/HomePage.jsx" }
   ]
 }
