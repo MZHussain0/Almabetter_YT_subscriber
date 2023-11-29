@@ -6,7 +6,7 @@ import SingleSubscriberPage from "./pages/SingleSubscriberPage";
 import SubNamesPage from "./pages/SubNamesPage";
 import SubscriberPage from "./pages/SubscriberPage";
 
-axios.defaults.baseURL = "https://almabetter-yt-subscribers.onrender.com/";
+axios.defaults.baseURL = "https://almabetter-yt-subscribers.onrender.com";
 axios.defaults.withCredentials = true;
 
 function App() {
