@@ -1,0 +1,14 @@
+﻿{
+  "routes": [
+    {
+      "src": "/subscribers/(.*)",
+      "dest": "/subscribers/$1",
+      "continue": true
+    },
+    {
+      "src": "/(.*)",
+      "headers": { "cache-control": "s-maxage=1,stale-while-revalidate" },
+      "dest": "/index.html"
+    }
+  ]
+}
