@@ -12,7 +12,7 @@ connectDb();
 
 // CONFIGURATION //
 const app = express(); // Create an Express app
-app.use(cors({ origin: "https://almabetter-yt-subscribers.netlify.ap" })); // Enable CORS
+app.use(cors({ origin: "https://almabetter-yt-subscriber.vercel.app" })); // Enable CORS
 app.use(bodyParser.json()); // Parse JSON bodies
 app.use(bodyParser.urlencoded({ extended: false }));
 
