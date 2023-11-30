@@ -14,7 +14,7 @@ const getSubscribers = asyncHandler(async (req, res) => {
 //@access public
 const getSubsNames = asyncHandler(async (req, res) => {
   const subscribers = await Subscriber.find({}).select(
-    "name subscribedChannel"
+    "-_id name subscribedChannel"
   );
   res.json(subscribers);
 });
