@@ -4,7 +4,7 @@
 
 ## Demo Link
 
-Access the live demo at https://almabetter-yt-subscribers.netlify.app
+Access the live demo at https://yt-subscriber-almabetter-frontend.vercel.app
 
 ## Table of Content:
 
@@ -19,11 +19,13 @@ Access the live demo at https://almabetter-yt-subscribers.netlify.app
 Almabetter-yt-subscribers-API is a backend application that uses MongoDB. It stores and fetches data of the subscribers on demand.
 ## Screenshots
 
-<img src="https://user-images.githubusercontent.com/37292226/221525682-6815d919-704b-4b53-b423-83448ee022d2.png" alt="home" width="250" >
-  <img src="https://user-images.githubusercontent.com/37292226/221525927-71d3c37c-1607-4ce5-958d-c227495300fd.png" alt="/subscribers" width="250" >
- <img src="https://user-images.githubusercontent.com/37292226/221526088-ee423dc1-b7a1-4972-81f4-2052e2ec8768.png" alt="/subscribers/names" width="250">
- <img src="https://user-images.githubusercontent.com/37292226/221526216-0aa4758c-ca95-4e0a-b92a-268f174c43c7.png" alt="/subscribers/:id" width="250">
- 
+![Screenshot 2023-11-30 211829](https://github.com/AntonioErdeljac/twitter-clone/assets/37292226/480d84d8-e035-43a5-bf56-1a99cf6cf43a)
+![Screenshot 2023-11-30 211858](https://github.com/AntonioErdeljac/twitter-clone/assets/37292226/875d9942-86b8-44e2-9be0-29dc66dc66ad)
+![Screenshot 2023-11-30 211918](https://github.com/AntonioErdeljac/twitter-clone/assets/37292226/757f192f-4cb5-408e-9a59-113cdda322c3)
+![Screenshot 2023-11-30 211940](https://github.com/AntonioErdeljac/twitter-clone/assets/37292226/5cbc3173-e651-49bd-b52f-2692a345f9a1)
+![Screenshot 2023-11-30 212014](https://github.com/AntonioErdeljac/twitter-clone/assets/37292226/f60d3f9d-1a18-4589-a038-9f848201f570)
+
+
 ## Technologies
 
 I used `React`, `Node`, `MongoDB`, `Express`, `Axios`.
